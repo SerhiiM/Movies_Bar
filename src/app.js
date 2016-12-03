@@ -1,7 +1,7 @@
 import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MainPage from './js/MainPage'
+import MainPage from './js/Pages/MainPage';
 
 ReactDOM.render(
   <MainPage/>,
