@@ -87,7 +87,7 @@
   "scripts": {
     "dev": "webpack-dev-server --content-base --host 0.0.0.0 --inline --hot --port 8082 ",
     "build": "webpack",
-    "server": "node server",
+    "server": "node server"
   },
   "author": "SerhiiMisnyk",
   "license": "ISC"

@@ -2,6 +2,12 @@ import {EventEmitter} from "events";
 import dispatcher from "../dispatcher";
 
 export default class BaseStore extends EventEmitter {
+
+    ['testAction'](action) {
+        const {heatmap} = action;
+        return 'eventTestAction';
+    }
+
     handleActionsInternal(action) {
         console.log("action.type ", action.type);
         if (typeof this[action.type] === "function") {
