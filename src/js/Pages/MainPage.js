@@ -1,16 +1,13 @@
 import React from 'react';
 import dispatcher from "../dispatcher";
+import BlockForView from './BlockForView';
 
 export default class MainPage extends React.Component {
 
-    constructor(props) {
-          super(props);
-          this.onClickForAction = this.onClickForAction.bind(this);
-          this.state = {
-              name:'This is it guys!'
-          };
+    state = {
+        name:'This is it guys!'
     }
-    onClickForAction(){
+    onClickForAction = () => {
         console.log('btn have been clicked');
         dispatcher.dispatch({type: 'testAction', hello:true });
     }
@@ -19,6 +16,7 @@ export default class MainPage extends React.Component {
         return(<div>
             <div>{this.state.name}</div>
             <button onClick={this.onClickForAction}>Click for dispatcher</button>
+            <BlockForView/>
             </div>)
     }
 }

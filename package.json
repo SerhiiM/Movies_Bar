@@ -85,12 +85,10 @@
     "webpack-dev-server": "^1.14.1"
   },
   "scripts": {
-    "dev": "webpack-dev-server --content-base src --host 0.0.0.0 --inline --hot --port 8082 ",
-    "prep-build": "node prep-build",
+    "dev": "webpack-dev-server --content-base --host 0.0.0.0 --inline --hot --port 8082 ",
     "build": "webpack",
     "server": "node server",
-    "test": "jest"
   },
-  "author": "",
+  "author": "SerhiiMisnyk",
   "license": "ISC"
 }
