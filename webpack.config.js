@@ -1,9 +1,15 @@
+var webpack = require('webpack');
+var path = require('path');
+
 module.exports = {
-    entry: './src/js/app.js',
+    entry: "./js/app.js",
+    devtool: "inline-sourcemap",
+    context: path.join(__dirname, "src"),
     output: {
-        path: './bin',
+        path: __dirname + "/bin/",
         filename: 'app.bundle.js',
     },
+    watch:true,
     module: {
         loaders: [
             {

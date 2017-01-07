@@ -85,9 +85,9 @@
     "webpack-dev-server": "^1.14.1"
   },
   "scripts": {
-    "dev": "webpack-dev-server --content-base --host 0.0.0.0 --inline --hot --port 8082 ",
+    "dev": "webpack-dev-server --inline -src --port 8082 ",
     "build": "webpack",
-    "server": "node server"
+    "server": "babel-node server.js"
   },
   "author": "SerhiiMisnyk",
   "license": "ISC"

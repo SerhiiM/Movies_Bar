@@ -9,7 +9,7 @@ export default class MainPage extends React.Component {
     }
     onClickForAction = () => {
         console.log('btn have been clicked');
-        dispatcher.dispatch({type: 'testAction', hello:true });
+        dispatcher.dispatch({type: 'testAction', visibleText:true });
     }
     render(){
         console.log(this.state.name)
