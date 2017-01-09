@@ -6,10 +6,10 @@ export default class BlockForView extends React.Component {
         display: true
     }
     componentWillMount(){
-        //BaseStore.on('testAction', this.toggleDisplay);
+        BaseStore.addChangeListener('eventTestAction', this.toggleDisplay);
     }
     componentWillUnmount(){
-        //BaseStore.removeListener('testAction', this.toggleDisplay);
+        BaseStore.removeChangeListener('eventTestAction', this.toggleDisplay);
     }
     toggleDisplay = () =>{
         this.setState({display:!this.state.display})

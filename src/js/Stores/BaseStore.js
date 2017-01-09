@@ -1,36 +1,26 @@
 import {EventEmitter} from "events";
 import dispatcher from "../dispatcher";
 
-export default class BaseStore extends EventEmitter {
+class BaseStore extends EventEmitter {
 
-    ['testAction'](action) {
-        const {heatmap} = action;
-        return 'eventTestAction';
-    }
-
-    handleActionsInternal(action) {
-        console.log("action.type ", action.type);
-        if (typeof this[action.type] === "function") {
-
-            const event = this[action.type](action);
-            if (event) {
-                this.emit(event);
+    constructor() {
+        super();
+        this.dispatchToken = dispatcher.register( action => {
+            switch (action.type) {
+                case 'testAction':
+                    this.emit('eventTestAction');
+                    break;
+                }
             }
-        } else {
-            console.warn("There is no [%s] method in store object", action.type);
-        }
+        );
+    }
+    addChangeListener(cnst,callback) {
+        this.on(cnst,callback);
     }
 
-    handleActions(action) {
-        console.log("action", action);
-        if (action && action.type) {
-            this.handleActionsInternal(action);
-        } else {
-            console.error("incorrect action type: ", action.type);
-        }
+    removeChangeListener(cnst,callback) {
+        this.removeListener(cnst,callback);
     }
 }
 
-const baseStore = new BaseStore;
-
-dispatcher.register(baseStore.handleActions.bind(baseStore));
+export default new BaseStore();
