@@ -1,15 +1,16 @@
 import React from 'react';
 import BaseStore from '../Stores/BaseStore';
+import * as cnst from '../Common/constant';
 
 export default class BlockForView extends React.Component {
     state = {
         display: true
     }
     componentWillMount(){
-        BaseStore.addChangeListener('eventTestAction', this.toggleDisplay);
+        BaseStore.addChangeListener(cnst.EVENT_TEST_ACTION, this.toggleDisplay);
     }
     componentWillUnmount(){
-        BaseStore.removeChangeListener('eventTestAction', this.toggleDisplay);
+        BaseStore.removeChangeListener(cnst.EVENT_TEST_ACTION, this.toggleDisplay);
     }
     toggleDisplay = () =>{
         this.setState({display:!this.state.display})

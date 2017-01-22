@@ -1,14 +1,15 @@
 import {EventEmitter} from "events";
 import dispatcher from "../dispatcher";
+import * as cnst from '../Common/constant';
 
 class BaseStore extends EventEmitter {
 
     constructor() {
         super();
-        this.dispatchToken = dispatcher.register( action => {
+        dispatcher.register( action => {
             switch (action.type) {
-                case 'testAction':
-                    this.emit('eventTestAction');
+                case cnst.TEST_ACTION:
+                    this.emit(cnst.EVENT_TEST_ACTION);
                     break;
                 }
             }

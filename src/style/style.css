@@ -1,0 +1,22 @@
+.LoginBlock{
+    width: 25%;
+    margin: auto;
+    margin-top: 200px;
+}
+.LoginBtn{
+    width: 100%;
+    background-color: orangered;
+    border-color: brown;
+}
+.LoginBtn:disabled{
+    background-color: grey !important;
+    border-color: grey !important;
+}
+.LoginBtn:hover{
+    background-color: brown;
+}
+.HomePageBlock{
+    width: 75%;
+    margin: auto;
+    margin-top: 100px;
+}
