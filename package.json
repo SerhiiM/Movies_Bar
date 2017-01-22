@@ -52,8 +52,8 @@
   },
   "scripts": {
     "start": "babel-node src/js/app.js",
-    "dev": "webpack --content-base --hot --inline -src --port 8082 ",
-    "build": "webpack",
+    "dev": "webpack-dev-server --content-base --hot --inline -src --port 8082 ",
+    "build": "webpack --watch --hot",
     "server": "babel-node server.js"
   },
   "author": "SerhiiMisnyk",

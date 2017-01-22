@@ -6,7 +6,8 @@ module.exports = {
     devtool: "inline-sourcemap",
     context: path.join(__dirname, "src"),
     output: {
-        path: __dirname + "/bin/",
+        path: __dirname + "/bin",
+        publicPath: '/bin/',
         filename: 'app.bundle.js',
     },
     watch:true,
@@ -25,5 +26,11 @@ module.exports = {
             { test: /\.css$/, loader: "style!css" },
             { test: /\.html$/, loader: 'html' }
         ]
-    }
+    },
+    devServer: {
+        hot: true
+    },  
+    plugins: [
+        new webpack.HotModuleReplacementPlugin()
+    ]
 }

@@ -50,7 +50,8 @@ jspm_packages
 .project
 .settings
 rtls-frontend.iml
-bin/app.bundle.js
+bin
+
 nbproject
 
 # local config file
