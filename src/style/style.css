@@ -1,8 +1,19 @@
-.LoginBlock{
-    width: 25%;
-    margin: auto;
-    margin-top: 200px;
+body{
+    background-color: white;
 }
+.LoginBlock{
+    width: 550px;
+    margin: auto;
+    margin-top: 10%;
+    padding: 70px;
+    background: lightgray;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px 2px rgba(0,0,0,0.47);
+}
+.LoginTitle{
+    text-align: center;
+    margin-bottom: 35px;
+}    
 .LoginBtn{
     width: 100%;
     background-color: orangered;
@@ -14,6 +25,14 @@
 }
 .LoginBtn:hover{
     background-color: brown;
+}
+.LoginIcons{
+    font-size: 28px;
+    position: relative;
+    top: -11px;
+}
+.LoginIconsShield{
+    left: 5px;
 }
 .HomePageBlock{
     width: 75%;

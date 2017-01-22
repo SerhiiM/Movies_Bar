@@ -56,13 +56,16 @@ export default class Login extends React.Component{
         const isFormNotValid = (emailStatus === 'error' || passwordStatus === 'error') ? true : false;
         return (
             <div className='LoginBlock'>
+                <h1 className='LoginTitle'>Welcome back</h1>
                 <Form horizontal onSubmit={this.handleSubmit}>
                     <FormGroup controlId="formHorizontalEmail"
                     validationState={emailStatus}>
-                    <Col componentClass={ControlLabel} sm={2}>
-                        Email
+                    <Col componentClass={ControlLabel} sm={1}>
+                        <div className='LoginIcons'>
+                            <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                        </div>
                     </Col>
-                    <Col sm={10}>
+                    <Col sm={11}>
                         <FormControl type="email" placeholder="Email"
                         onChange = {this.changeUsername}/>
                         <HelpBlock>{emailStatusMessage}</HelpBlock>
@@ -70,17 +73,19 @@ export default class Login extends React.Component{
                     </FormGroup>
                     <FormGroup controlId="formHorizontalPassword"
                     validationState={passwordStatus}>
-                    <Col componentClass={ControlLabel} sm={2}>
-                        Password
+                    <Col componentClass={ControlLabel} sm={1}>
+                        <div className='LoginIcons LoginIconsShield'>
+                            <i class="fa fa-shield" aria-hidden="true"></i>
+                        </div>
                     </Col>
-                    <Col sm={10}>
+                    <Col sm={11}>
                         <FormControl type="password" placeholder="Password"
                         onChange = {this.changePassword}/>
                         <HelpBlock>{passwordStatusMessage}</HelpBlock>
                     </Col>
                     </FormGroup>
                     <FormGroup>
-                        <Col smOffset={2} sm={10}>
+                        <Col sm={12}>
                             <Button type="submit" className='LoginBtn'
                             disabled={isFormNotValid}>
                                 Sign in

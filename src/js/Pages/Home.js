@@ -37,6 +37,7 @@ export default class Home extends React.Component {
         return (
             <div className='HomePageBlock'>
                 <div><Link to={`/about`}>About</Link></div>
+                <div><Link to={`/`}>Login</Link></div>
                 <div>{this.state.name}</div>
                 <input onChange={this.addNumbers} />
                 <h4>Exeption on position: {result}</h4>
