@@ -27,38 +27,3 @@ module.exports = {
         ]
     }
 }
-// var webpack = require('webpack');
-// var path = require('path');
-
-// module.exports = {
-//   entry: [
-//     'webpack-dev-server/client?http://localhost:8080',
-//     'webpack/hot/only-dev-server',
-//     './js/app.js'
-//     ],
-//   module: {
-//     loaders: [{
-//       test: /\.jsx?$/,
-//       exclude: /node_modules/,
-//       loader: 'react-hot!babel'
-//     }]
-//   },
-//   resolve: {
-//     extensions: ['', '.js', '.jsx']
-//   },
-//   devtool: "inline-sourcemap",
-//   context: path.join(__dirname, "src"),
-//   watch:true,
-//   output: {
-//     path: __dirname + '/bin',
-//     publicPath: '/',
-//     filename: 'app.bundle.js'
-//   },
-//   devServer: {
-//     contentBase: './bin',
-//     hot: true
-//   },
-//   plugins: [
-//     new webpack.HotModuleReplacementPlugin()
-//   ]
-// };
