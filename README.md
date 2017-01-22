@@ -1,5 +1,5 @@
-Start project:
-1) build => webpack 
-2) run server => http-server -p 8000
-
-webpack-dev-server --content-base src --host 0.0.0.0 --inline --hot --port 8082 
+ - 1 . To start: npm run dev
+ - 2 . TODO: Styles folder is not under hot module
+ - 3 . TODO: Add validation to login
+ - 4 . TODO: Add Server part to App
+ - 5 . TODO: Add DB to App 
