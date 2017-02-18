@@ -23,7 +23,7 @@ app.get('/', function (req, res) {
 
 app.get('/info', function (req, res) {
     res.json({
-        result: 'Some Info'
+        result: 'Info about company'
     });
 });
 
