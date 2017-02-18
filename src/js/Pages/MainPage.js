@@ -3,6 +3,7 @@ import { Router, Route, Link, browserHistory} from 'react-router';
 import Home from './Home';
 import About from './About';
 import Login from './Login';
+import "../../style/AppStyles.scss";
 
 export default class MainPage extends React.Component {
     render() {

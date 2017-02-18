@@ -1,12 +1,11 @@
-/*
-#247BA0
-#70C1B3
-#B2DBBF
-#F3FFBD
-#FF1654
-*/
+$AppColor1: #247BA0;
+$AppColor2: #70C1B3;
+$AppColor3: #B2DBBF;
+$AppColor4: #F3FFBD;
+$AppColor5: #FF1654;
+
 body{
-    background-color: #F3FFBD;
+    background-color: $AppColor4;
     /*font-family: 'Dancing Script', cursive;
     font-family: 'Architects Daughter', cursive;*/
     font-family: 'Handlee', cursive;
@@ -23,7 +22,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
     margin: auto;
     margin-top: 10%;
     padding: 40px 30px;
-    background: #B2DBBF;
+    background: $AppColor3;
     border-radius: 5px;
     box-shadow: 0px 0px 20px 2px rgba(0,0,0,0.47);
 }
@@ -34,15 +33,15 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
 .LoginBtn{
     font-size: 25px;
     width: 100%;
-    background-color: #70C1B3;
-    border-color: #70C1B3;
+    background-color: $AppColor2;
+    border-color: $AppColor2;
 }
 .LoginBtn:disabled{
     background-color: grey !important;
     border-color: grey !important;
 }
 .LoginBtn:hover{
-    background-color: #247BA0;
+    background-color: $AppColor1;
 }
 .LoginIcons{
     font-size: 28px;
@@ -61,7 +60,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
     display: flex;
     flex-wrap: wrap;
     font-size: 22px;
-    background: #B2DBBF;
+    background: $AppColor3;
     padding: 5px;
 }
 .NavigationBlockLinks{
@@ -73,6 +72,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
     transition: .2s;
 }
 .NavigationBlockLinks a:hover{
-    color:#FF1654;
+    color:$AppColor5;
     text-decoration: none;
 }

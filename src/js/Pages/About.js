@@ -23,7 +23,7 @@ export default class About extends React.Component {
     }
     render() {
         return(
-            <main>
+            <section>
                 <nav className='NavigationBlock'>
                     <section className='NavigationBlockLinks'>
                         <Link to={`/home`}>Home</Link>
@@ -34,7 +34,7 @@ export default class About extends React.Component {
                     <button onClick={this.getInfoFromServer}>Click for info</button>
                     <mark>{this.state.info}</mark>
                 </section>
-            </main>
+            </section>
         )
     }
 }
