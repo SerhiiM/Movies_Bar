@@ -17,6 +17,8 @@
     "babel-preset-react": "^6.3.13",
     "babel-preset-stage-0": "^6.3.13",
     "css-loader": "^0.23.1",
+    "compression": "^1.6.2",
+    "cors": "2.8.1",
     "express": "^4.14.0",
     "express-session": "^1.14.1",
     "flux": "^2.1.1",

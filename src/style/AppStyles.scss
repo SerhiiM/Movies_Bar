@@ -1,0 +1,77 @@
+$AppColor1: #247BA0;
+$AppColor2: #70C1B3;
+$AppColor3: #B2DBBF;
+$AppColor4: #F3FFBD;
+$AppColor5: #FF1654;
+
+body{
+    background-color: $AppColor4;
+    /*font-family: 'Dancing Script', cursive;
+    font-family: 'Architects Daughter', cursive;*/
+    font-family: 'Handlee', cursive;
+    /*font-family: 'Kalam', cursive;*/
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+    /*font-family: 'Dancing Script', cursive;
+    font-family: 'Architects Daughter', cursive;*/
+    font-family: 'Handlee', cursive;
+    /*font-family: 'Kalam', cursive;*/
+}
+.LoginBlock{
+    width: 500px;
+    margin: auto;
+    margin-top: 10%;
+    padding: 40px 30px;
+    background: $AppColor3;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px 2px rgba(0,0,0,0.47);
+}
+.LoginTitle{
+    text-align: center;
+    margin-bottom: 35px;
+}    
+.LoginBtn{
+    font-size: 25px;
+    width: 100%;
+    background-color: $AppColor2;
+    border-color: $AppColor2;
+}
+.LoginBtn:disabled{
+    background-color: grey !important;
+    border-color: grey !important;
+}
+.LoginBtn:hover{
+    background-color: $AppColor1;
+}
+.LoginIcons{
+    font-size: 28px;
+    position: relative;
+    top: -11px;
+}
+.LoginIconsShield{
+    left: 5px;
+}
+.HomePageBlock{
+    width: 75%;
+    margin: auto;
+    margin-top: 100px;
+}
+.NavigationBlock{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 22px;
+    background: $AppColor3;
+    padding: 5px;
+}
+.NavigationBlockLinks{
+    margin-right: 15px;
+    margin-left: 40%;
+}
+.NavigationBlockLinks a{
+    margin-right: 15px;
+    transition: .2s;
+}
+.NavigationBlockLinks a:hover{
+    color:$AppColor5;
+    text-decoration: none;
+}
