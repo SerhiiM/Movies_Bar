@@ -8,10 +8,17 @@ export default class About extends React.Component {
     }
     render() {
         return(
-            <section>
-                <Link to={`/home`}>Home</Link>
-                <button onClick={this.getInfoFromServer}>Click for info</button>
-            </section>
+            <main>
+                <nav className='NavigationBlock'>
+                    <section className='NavigationBlockLinks'>
+                        <Link to={`/home`}>Home</Link>
+                        <Link to={`/`}>Login</Link>
+                    </section>
+                </nav>
+                <section className='HomePageBlock'>
+                    <button onClick={this.getInfoFromServer}>Click for info</button>
+                </section>
+            </main>
         )
     }
 }

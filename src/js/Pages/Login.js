@@ -19,7 +19,7 @@ export default class Login extends React.Component{
             this.setState({
                 username:username,
                 emailStatus:'error',
-                emailStatusMessage:'You have to add email'
+                emailStatusMessage:'Email is required'
             })
         }else{
             this.setState({
@@ -35,7 +35,7 @@ export default class Login extends React.Component{
             this.setState({
                 password:password,
                 passwordStatus:'error',
-                passwordStatusMessage:'You have to add email'
+                passwordStatusMessage:'Password is required'
             })
         }else{
             this.setState({

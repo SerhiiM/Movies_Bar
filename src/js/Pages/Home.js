@@ -35,16 +35,22 @@ export default class Home extends React.Component {
         const result = this.state.result
         console.log(this.state.name)
         return (
-            <div className='HomePageBlock'>
-                <div><Link to={`/about`}>About</Link></div>
-                <div><Link to={`/`}>Login</Link></div>
-                <div>{this.state.name}</div>
-                <input onChange={this.addNumbers} />
-                <h4>Exeption on position: {result}</h4>
-                <button onClick={this.iqTest}>Count</button>
-                <button onClick={this.onClickForAction}>Click for dispatcher</button>
-                <BlockForView />
-            </div>
+            <main>
+                <nav className='NavigationBlock'>
+                    <section className='NavigationBlockLinks'>
+                        <Link to={`/about`}>About</Link>
+                        <Link to={`/`}>Login</Link>
+                    </section>
+                </nav>
+                <section className='HomePageBlock'>
+                    <div>{this.state.name}</div>
+                    <input onChange={this.addNumbers} />
+                    <h4>Exeption on position: {result}</h4>
+                    <button onClick={this.iqTest}>Count</button>
+                    <button onClick={this.onClickForAction}>Click for dispatcher</button>
+                    <BlockForView />
+                </section>
+            </main>
         )
     }
 }
