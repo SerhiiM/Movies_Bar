@@ -86,7 +86,7 @@ export default class Login extends React.Component{
                     </FormGroup>
                     <FormGroup>
                         <Col sm={12}>
-                            <Button type="submit" className='LoginBtn'
+                            <Button type="submit" className='LoginBtn Btn'
                             disabled={isFormNotValid}>
                                 Sign in
                             </Button>

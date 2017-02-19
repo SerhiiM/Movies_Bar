@@ -3,8 +3,10 @@ import {Link} from 'react-router';
 import * as Actions from '../Actions/InfoActions';
 import BaseStore from '../Stores/BaseStore';
 import * as cnst from '../Common/constant';
+import { connect } from 'react-redux';
+import DisplayInfo from './DisplayInfo';
 
-export default class About extends React.Component {
+class About extends React.Component {
     state = {
         info: BaseStore.getInfo()
     }
@@ -21,20 +23,41 @@ export default class About extends React.Component {
     getInfoFromServer = () => {
         Actions.getInfoAboutProject()
     }
+    getRedux = () =>{
+        this.props.onTodoClick({
+            'type': 'ADD_TODO',
+            'text':'deeep'
+        })
+    }
     render() {
+        console.log(this.props)
         return(
-            <section>
-                <nav className='NavigationBlock'>
-                    <section className='NavigationBlockLinks'>
-                        <Link to={`/home`}>Home</Link>
-                        <Link to={`/`}>Login</Link>
-                    </section>
-                </nav>
-                <section className='HomePageBlock'>
-                    <button onClick={this.getInfoFromServer}>Click for info</button>
-                    <mark>{this.state.info}</mark>
-                </section>
-            </section>
+            <DisplayInfo 
+            getRedux={this.getRedux} 
+            getInfoFromServer = {this.getInfoFromServer}
+            info = {this.state.info}
+            todos = {this.props.todos}
+            />
         )
     }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    todos: state.todos
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onTodoClick: (state) => {
+      dispatch(state)
+    }
+  }
+}
+
+About = connect(
+    mapStateToProps,
+    mapDispatchToProps
+    )(About);
+export default About

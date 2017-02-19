@@ -17,6 +17,17 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
     font-family: 'Handlee', cursive;
     /*font-family: 'Kalam', cursive;*/
 }
+.Btn{
+    background-color: $AppColor2;
+    border-color: $AppColor2; 
+}
+.Btn:hover,
+.Btn:focus,
+.Btn:active{
+    background-color: $AppColor1 !important;
+    border-color: $AppColor1 !important;
+    color:white; 
+}
 .LoginBlock{
     width: 500px;
     margin: auto;
@@ -33,15 +44,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
 .LoginBtn{
     font-size: 25px;
     width: 100%;
-    background-color: $AppColor2;
-    border-color: $AppColor2;
 }
 .LoginBtn:disabled{
     background-color: grey !important;
     border-color: grey !important;
-}
-.LoginBtn:hover{
-    background-color: $AppColor1;
 }
 .LoginIcons{
     font-size: 28px;

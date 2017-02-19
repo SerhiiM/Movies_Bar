@@ -2,6 +2,7 @@ import {EventEmitter} from "events";
 import dispatcher from "../dispatcher";
 import * as cnst from '../Common/constant';
 import Storage from './Storage';
+import { createStore } from 'redux';
 
 class BaseStore extends EventEmitter {
 
