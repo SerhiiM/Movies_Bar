@@ -1,42 +1,40 @@
 import React from 'react';
 import {Link} from 'react-router';
 import * as Actions from '../Actions/InfoActions';
-import BaseStore from '../Stores/BaseStore';
 import * as cnst from '../Common/constant';
 import { connect } from 'react-redux';
 import DisplayInfo from './DisplayInfo';
 
 class About extends React.Component {
-    state = {
-        info: BaseStore.getInfo()
-    }
-    componentWillMount(){
-        BaseStore.addChangeListener(cnst.EVENT_RESEIVE_INFO, this.getInfo);
-    }
-    componentWillUnmount(){
-        BaseStore.removeChangeListener(cnst.EVENT_RESEIVE_INFO, this.getInfo);
-    }
-    getInfo = () => {
-        const info = BaseStore.getInfo()
-        this.setState({ info:info })
-    }
+
     getInfoFromServer = () => {
-        Actions.getInfoAboutProject()
+        Actions.getInfoAboutProject(this.props.onTodoClick)
     }
-    getRedux = () =>{
+
+    onTaskCreate = (text) =>{
         this.props.onTodoClick({
-            'type': 'ADD_TODO',
-            'text':'deeep'
+            'type': cnst.ADD_TODO,
+            'text':text,
+            'id': this.props.todos.length
         })
     }
+
+    onTaskClick = (id) =>{
+        this.props.onTodoClick({
+            'type': cnst.COMPLETE_TODO,
+            'id': id
+        })
+    }
+
     render() {
         console.log(this.props)
         return(
             <DisplayInfo 
-            getRedux={this.getRedux} 
+            onTaskCreate={this.onTaskCreate} 
             getInfoFromServer = {this.getInfoFromServer}
-            info = {this.state.info}
+            info = {this.props.serverInfo}
             todos = {this.props.todos}
+            onTaskClick = {this.onTaskClick}
             />
         )
     }
@@ -44,7 +42,8 @@ class About extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    todos: state.todos
+    todos: state.todos,
+    serverInfo: state.infoFromServer
   }
 }
 

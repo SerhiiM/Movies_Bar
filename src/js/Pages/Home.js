@@ -1,5 +1,4 @@
 import React from 'react';
-import dispatcher from "../dispatcher";
 import BlockForView from './BlockForView';
 import * as cnst from '../Common/constant';
 import {Link} from 'react-router';
@@ -15,7 +14,6 @@ class Home extends React.Component {
     }
     onClickForAction = () => {
         console.log('btn have been clicked');
-        dispatcher.dispatch({type: cnst.TEST_ACTION, visibleText:true });
     }
     iqTest = () => {
         const arr = this.state.numbers.split(" ")
@@ -48,7 +46,6 @@ class Home extends React.Component {
                     <input onChange={this.addNumbers} />
                     <h4>Exeption on position: {result}</h4>
                     <button className = 'Btn' onClick={this.iqTest}>Count</button>
-                    <button className = 'Btn' onClick={this.onClickForAction}>Click for dispatcher</button>
                     <BlockForView />
                 </section>
             </main>

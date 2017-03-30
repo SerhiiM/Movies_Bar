@@ -1,13 +1,16 @@
 import axios from 'axios';
 import * as cnst from '../Common/constant';
-import dispatcher from "../dispatcher";
+import { connect } from 'react-redux';
 
-export function getInfoAboutProject () {
-    console.log('Get Info Action');
+export function getInfoAboutProject (dispatch) {
+    console.log(this,'Get Info Action');
     axios.get('http://localhost:8083/info')
     .then(({data})=> {
         console.log(data);
-        dispatcher.dispatch({type: cnst.RESEIVE_INFO, site_info: data.result })
+        dispatch({
+            type: cnst.RECEIVE_NEW_INFO, 
+            site_info: data.result 
+        })
     })
     .catch((error) =>{
         console.log(error);

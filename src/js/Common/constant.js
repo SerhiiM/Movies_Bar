@@ -1,7 +1,4 @@
 //Type
-export const TEST_ACTION = 'TEST_ACTION';
-export const RESEIVE_INFO = 'RESEIVE_INFO';
-
-//Events
-export const EVENT_TEST_ACTION = 'EVENT_TEST_ACTION';
-export const EVENT_RESEIVE_INFO = 'EVENT_RESEIVE_INFO';
+export const ADD_TODO = 'ADD_TODO';
+export const COMPLETE_TODO = 'COMPLETE_TODO';
+export const RECEIVE_NEW_INFO = 'RECEIVE_NEW_INFO';
