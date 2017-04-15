@@ -1,11 +1,11 @@
 import React from 'react';
 import {Link} from 'react-router';
-import * as Actions from '../Actions/InfoActions';
-import * as cnst from '../Common/constant';
+import * as Actions from '../../Actions/InfoActions';
+import * as cnst from '../../Common/constant';
 import { connect } from 'react-redux';
 import DisplayInfo from './DisplayInfo';
 
-class About extends React.Component {
+class Invoice extends React.Component {
 
     getInfoFromServer = () => {
         Actions.getInfoAboutProject(this.props.onTodoClick)
@@ -27,7 +27,6 @@ class About extends React.Component {
     }
 
     render() {
-        console.log(this.props)
         return(
             <DisplayInfo 
             onTaskCreate={this.onTaskCreate} 
@@ -55,8 +54,8 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-About = connect(
+Invoice = connect(
     mapStateToProps,
     mapDispatchToProps
-    )(About);
-export default About
+    )(Invoice);
+export default Invoice

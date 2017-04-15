@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router';
-import * as Actions from '../Actions/InfoActions';
-import * as cnst from '../Common/constant';
+import * as Actions from '../../Actions/InfoActions';
+import * as cnst from '../../Common/constant';
 import { connect } from 'react-redux';
 
 export default class DisplayInfo extends React.Component {
@@ -26,12 +26,11 @@ export default class DisplayInfo extends React.Component {
     }
     
     render() {
-        console.log(this.props)
         return(
             <section>
                 <nav className='NavigationBlock'>
                     <section className='NavigationBlockLinks'>
-                        <Link to={`/home`}>Home</Link>
+                        <Link to={`/invoices_list`}>invoices_list</Link>
                         <Link to={`/`}>Login</Link>
                     </section>
                 </nav>

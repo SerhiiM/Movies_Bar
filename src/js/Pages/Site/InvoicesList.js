@@ -1,10 +1,10 @@
 import React from 'react';
 import BlockForView from './BlockForView';
-import * as cnst from '../Common/constant';
+import * as cnst from '../../Common/constant';
 import {Link} from 'react-router';
 import { connect } from 'react-redux';
 
-class Home extends React.Component {
+class InvoicesList extends React.Component {
     
     state = {
         name:'This is it guys!',
@@ -32,12 +32,11 @@ class Home extends React.Component {
     }
     render() {
         const result = this.state.result
-        console.log(this.props.todos);
         return (
             <main>
                 <nav className='NavigationBlock'>
                     <section className='NavigationBlockLinks'>
-                        <Link to={`/about`}>About</Link>
+                        <Link to={`/invoice`}>Invoice</Link>
                         <Link to={`/`}>Login</Link>
                     </section>
                 </nav>
@@ -59,7 +58,7 @@ const mapStateToProps = (state) => {
   }
 }
 
-Home = connect(
+InvoicesList = connect(
     mapStateToProps
-    )(Home);
-export default Home
+    )(InvoicesList);
+export default InvoicesList

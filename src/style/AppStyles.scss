@@ -1,39 +1,33 @@
-$AppColor1: #247BA0;
-$AppColor2: #70C1B3;
-$AppColor3: #B2DBBF;
-$AppColor4: #F3FFBD;
-$AppColor5: #FF1654;
+$AppColor1: #ffffff;
+$AppColor2: #f7f7f7;
+$AppColor3: #dfe3ee;
+$AppColor4: #3b5998;
+$AppColor5: #324b81;
 
 body{
-    background-color: $AppColor4;
-    /*font-family: 'Dancing Script', cursive;
-    font-family: 'Architects Daughter', cursive;*/
-    font-family: 'Handlee', cursive;
-    /*font-family: 'Kalam', cursive;*/
+    background-color: $AppColor1;
+    font-family: 'Ubuntu', sans-serif;
 }
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
-    /*font-family: 'Dancing Script', cursive;
-    font-family: 'Architects Daughter', cursive;*/
-    font-family: 'Handlee', cursive;
-    /*font-family: 'Kalam', cursive;*/
+    font-family: 'Ubuntu', sans-serif;
 }
 .Btn{
-    background-color: $AppColor2;
-    border-color: $AppColor2; 
+    background-color: $AppColor4;
+    border-color: $AppColor4; 
 }
 .Btn:hover,
 .Btn:focus,
 .Btn:active{
-    background-color: $AppColor1 !important;
-    border-color: $AppColor1 !important;
+    background-color: $AppColor5 !important;
+    border-color: $AppColor5 !important;
     color:white; 
 }
 .LoginBlock{
-    width: 500px;
+    width: 450px;
     margin: auto;
     margin-top: 10%;
     padding: 40px 30px;
-    background: $AppColor3;
+    background: $AppColor2;
     border-radius: 5px;
     box-shadow: 0px 0px 20px 2px rgba(0,0,0,0.47);
 }
@@ -66,7 +60,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
     display: flex;
     flex-wrap: wrap;
     font-size: 22px;
-    background: $AppColor3;
+    background: $AppColor4;
     padding: 5px;
 }
 .NavigationBlockLinks{
@@ -76,9 +70,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
 .NavigationBlockLinks a{
     margin-right: 15px;
     transition: .2s;
+    color:$AppColor2;
 }
 .NavigationBlockLinks a:hover{
-    color:$AppColor5;
+    color:$AppColor3;
     text-decoration: none;
 }
 .DisplayInfoTaskActive{

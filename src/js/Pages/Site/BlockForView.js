@@ -1,5 +1,5 @@
 import React from 'react';
-import * as cnst from '../Common/constant';
+import * as cnst from '../../Common/constant';
 
 export default class BlockForView extends React.Component {
     state = {
