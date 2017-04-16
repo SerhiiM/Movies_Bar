@@ -3,7 +3,6 @@ import {Link} from 'react-router';
 import * as Actions from '../../Actions/InfoActions';
 import * as cnst from '../../Common/constant';
 import { connect } from 'react-redux';
-import DisplayInfo from './DisplayInfo';
 
 class Invoice extends React.Component {
 
@@ -28,13 +27,14 @@ class Invoice extends React.Component {
 
     render() {
         return(
-            <DisplayInfo 
-            onTaskCreate={this.onTaskCreate} 
-            getInfoFromServer = {this.getInfoFromServer}
-            info = {this.props.serverInfo}
-            todos = {this.props.todos}
-            onTaskClick = {this.onTaskClick}
-            />
+            <main>
+                <nav className='NavigationBlock'>
+                    <section className='NavigationBlockLinks'>
+                        <Link to={`/invoices_list`}>Invoices List</Link>
+                        <Link to={`/`}>Login</Link>
+                    </section>
+                </nav>
+            </main>
         )
     }
 }

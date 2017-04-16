@@ -1,8 +1,9 @@
 import React from 'react';
 import { Form, FormGroup, FormControl, Col, 
     ControlLabel, Button, HelpBlock,Checkbox } from "react-bootstrap";
+import { connect } from 'react-redux';
 
-export default class Login extends React.Component{
+class Login extends React.Component{
 
     state = {
         username: '',
@@ -22,7 +23,7 @@ export default class Login extends React.Component{
     }
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log(this.state.username,this.state.password);
+        console.info(`Username: ${this.state.username} , Password: ${this.state.password}`);
         this.props.history.push('/invoices_list');
     }
     render(){
@@ -79,3 +80,23 @@ export default class Login extends React.Component{
         )
     }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    serverInfo: state.infoFromServer
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    receiveCustumerData: (state) => {
+      dispatch(state)
+    }
+  }
+}
+
+Login = connect(
+    mapStateToProps,
+    mapDispatchToProps
+    )(Login);
+export default Login

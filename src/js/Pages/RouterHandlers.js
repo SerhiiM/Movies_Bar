@@ -5,7 +5,7 @@ export function onEnterLogin(params, replace, done){
 }
 
 export function onEnterInvoicesList(params, replace, done){
-    console.log('onEnterInvoicesList')
+    console.log('onEnterInvoicesList',arguments)
     done();
 }
 

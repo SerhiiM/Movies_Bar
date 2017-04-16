@@ -2,11 +2,15 @@ import { combineReducers } from 'redux';
 import todos from './todos';
 import visibilityFilter from './visibilityFilter';
 import infoFromServer from './infoFromServer';
+import customerData from './customerData';
+import invoicesList from './invoicesList';
 
-const todoApp = combineReducers({
+const reducers = combineReducers({
   todos,
   infoFromServer,
-  visibilityFilter
+  visibilityFilter,
+  customerData,
+  invoicesList
 })
 
-export default todoApp
+export default reducers

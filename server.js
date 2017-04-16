@@ -15,15 +15,7 @@ app.options('*', cors());
 
 app.use(compression({filter: shouldCompress}));
 
-app.get('/', function (req, res) {
-  res.send('Hello World!');
-});
-
-app.get('/info', function (req, res) {
-    res.json({
-        result: 'Info about company'
-    });
-});
+app.use('/api/', require('./server/api'));
 
 app.listen(8083, function () {
   console.log('Server in on 8083 port!');
