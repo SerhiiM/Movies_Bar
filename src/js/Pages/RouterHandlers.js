@@ -1,6 +1,6 @@
 
-export function onEnterLogin(params, replace, done){
-    console.log('onEnterLogin')
+export function onEnterLoading(params, replace, done){
+    console.log('onEnterLoading')
     done();
 }
 

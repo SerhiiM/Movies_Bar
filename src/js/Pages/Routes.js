@@ -1,4 +1,4 @@
-import Login from './Site/Login';
+import Loading from './Site/Loading';
 import InvoicesList from './Site/InvoicesList';
 import Invoice from './Site/Invoice';
 
@@ -7,8 +7,8 @@ import * as handlers from './RouterHandlers';
 export const getAppRoutes = () => {
     return {
         path: `/`,
-        indexRoute: {component: Login},
-        onEnter: handlers.onEnterLogin,
+        indexRoute: {component: Loading},
+        onEnter: handlers.onEnterLoading,
         childRoutes: [
             {
                 path: '/invoices_list',

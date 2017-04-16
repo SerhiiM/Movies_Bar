@@ -6,10 +6,10 @@ import * as InvoicesAction from '../../Actions/InvoicesAction';
 
 class InvoicesList extends React.Component {
 
-    componentDidMount(){
-        InvoicesAction.getInvoicesList(this.props.receiveInvoices)
+    onSelectInvoice = (invoice) => {
+        InvoicesAction.getInvoicesItems(this.props.receiveData,invoice.id);
+        this.props.history.push('/invoice');
     }
-
     render() {
         return (
             <main>
@@ -21,13 +21,16 @@ class InvoicesList extends React.Component {
                 </nav>
                 <section className='HomePageBlock'>
                     {
-                        this.props.invoicesList.map((el,key) => {
+                        this.props.invoicesList.map((invoice,key) => {
                             return (
-                                <div>
-                                    <span>{el.id}</span><br/>
-                                    <span>{el.custumer_id}</span><br/>
-                                    <span>{el.discount}</span><br/>
-                                    <span>{el.total}</span><br/>
+                                <div 
+                                onClick={this.onSelectInvoice.bind(this,invoice)}
+                                key={key}>
+                                    <span>Invoice id : {invoice.id}</span><br/>
+                                    <span>Custumer id : {invoice.custumer_id}</span><br/>
+                                    <span>Discount : {invoice.discount}</span><br/>
+                                    <span>Total : {invoice.total}</span><br/>
+                                    <hr/>
                                 </div>)
                         })
                     }
@@ -39,13 +42,13 @@ class InvoicesList extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    invoicesList: [...state.invoicesList]
+    invoicesList: state.invoicesList
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    receiveInvoices: (state) => {
+    receiveData: (state) => {
       dispatch(state)
     }
   }

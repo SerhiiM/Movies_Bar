@@ -1,31 +1,15 @@
 var express = require('express');
 var router = express.Router();
-
-router.get('/', function (req, res) {
-  res.send('Hello World!');
-});
-
-router.get('/info', function (req, res) {
-    res.json({
-        result: 'Info about company'
-    });
-});
+var data = require('./default_data');
 
 router.get('/invoices', function (req, res) {
-    res.json({
-        result: [
-            {
-                id:1,
-                custumer_id:1,
-                discount:0,
-                total:200
-            },{
-                id:2,
-                custumer_id:1,
-                discount:5,
-                total:300
-            }
-        ]
-    });
+    res.json(data.default_invoices_list);
+});
+
+router.get('/invoices/:id/items', function (req, res) {
+    const needed_items = data.default_invoices_items.filter(item => {
+        return item.invoice_id == req.params.id
+    })
+    res.json(needed_items);
 });
 module.exports = router;

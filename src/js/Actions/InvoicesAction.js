@@ -8,7 +8,20 @@ export function getInvoicesList (dispatch) {
     .then(({data})=> {
         dispatch({
             type: cnst.RECEIVE_INVOICES_LIST, 
-            receiveInvoices: data.result || [] 
+            receiveInvoices: data || [] 
+        })
+    })
+    .catch((error) =>{
+        console.error(error);
+    });
+}
+
+export function getInvoicesItems (dispatch,id) {
+    axios.get(`${SERVER_PATH}/api/invoices/${id}/items`)
+    .then(({data})=> {
+        dispatch({
+            type: cnst.RECEIVE_INVOICES_ITEMS, 
+            receiveInvoicesItems: data || [] 
         })
     })
     .catch((error) =>{

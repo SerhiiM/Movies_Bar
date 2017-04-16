@@ -1,18 +1,21 @@
 import * as cnst from '../Common/constant';
+import lodash from 'lodash';
 
-const changeInvoicesList = (state = new Set(), action) => {
+const changeInvoicesList = (state = [], action) => {
   switch (action.type) {
     case cnst.RECEIVE_INVOICES_LIST:
         action.receiveInvoices.forEach(el => {
-            state.add(el)
+            if(!lodash.some(state,['id', el.id])){
+              state.push(el)
+            }
         })
-        return state
+        return lodash.uniq(state);
     default:
         return state
   }
 }
 
-const invoicesList = (state = new Set(), action) => {
+const invoicesList = (state = [], action) => {
   switch (action.type) {
     case cnst.RECEIVE_INVOICES_LIST:
       return changeInvoicesList(state, action)

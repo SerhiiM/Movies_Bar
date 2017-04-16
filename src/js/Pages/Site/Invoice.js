@@ -34,6 +34,21 @@ class Invoice extends React.Component {
                         <Link to={`/`}>Login</Link>
                     </section>
                 </nav>
+                <section className='HomePageBlock'>
+                    {
+                        this.props.invoicesItems.map((item,key) => {
+                            return (
+                                <div 
+                                key={key}>
+                                    <span>Item id : {item.id}</span><br/>
+                                    <span>Invoice id : {item.invoice_id}</span><br/>
+                                    <span>Product id : {item.product_id}</span><br/>
+                                    <span>Quantity : {item.quantity}</span><br/>
+                                    <hr/>
+                                </div>)
+                        })
+                    }
+                </section>
             </main>
         )
     }
@@ -41,8 +56,7 @@ class Invoice extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    todos: state.todos,
-    serverInfo: state.infoFromServer
+    invoicesItems: state.invoicesItems
   }
 }
 

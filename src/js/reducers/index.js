@@ -1,16 +1,13 @@
 import { combineReducers } from 'redux';
-import todos from './todos';
-import visibilityFilter from './visibilityFilter';
 import infoFromServer from './infoFromServer';
 import customerData from './customerData';
 import invoicesList from './invoicesList';
+import invoicesItems from './invoicesItems';
 
 const reducers = combineReducers({
-  todos,
-  infoFromServer,
-  visibilityFilter,
   customerData,
-  invoicesList
+  invoicesList,
+  invoicesItems
 })
 
 export default reducers
