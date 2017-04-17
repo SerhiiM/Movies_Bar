@@ -3,6 +3,8 @@ import * as cnst from '../../Common/constant';
 import {Link} from 'react-router';
 import { connect } from 'react-redux';
 import * as InvoicesAction from '../../Actions/InvoicesAction';
+import * as CustumerAction from '../../Actions/CustumerAction';
+import * as ProductsAction from '../../Actions/ProductsAction';
 
 class Loading extends React.Component {
 
@@ -12,9 +14,8 @@ class Loading extends React.Component {
 
     getStartData = () => {
         InvoicesAction.getInvoicesList(this.props.receiveData);
-        // InvoicesAction.getInvoicesItems(this.props.receiveData);
-        // CustomerAction.getCustumers(this.props.receiveData);
-        // ProductsAction.getProducts(this.props.receiveData);
+        CustumerAction.getCustumers(this.props.receiveData);
+        ProductsAction.getProducts(this.props.receiveData);
         this.props.history.push('/invoices_list');
     }
 

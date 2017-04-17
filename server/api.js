@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+
 var data = require('./default_data');
 
 router.get('/invoices', function (req, res) {
@@ -12,4 +13,13 @@ router.get('/invoices/:id/items', function (req, res) {
     })
     res.json(needed_items);
 });
+
+router.get('/customers', function (req, res) {
+    res.json(data.default_custumers);
+});
+
+router.get('/products', function (req, res) {
+    res.json(data.products);
+});
+
 module.exports = router;

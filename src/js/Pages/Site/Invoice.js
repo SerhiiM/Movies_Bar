@@ -1,30 +1,23 @@
 import React from 'react';
 import {Link} from 'react-router';
-import * as Actions from '../../Actions/InfoActions';
 import * as cnst from '../../Common/constant';
 import { connect } from 'react-redux';
+import lodash from 'lodash';
 
 class Invoice extends React.Component {
 
-    getInfoFromServer = () => {
-        Actions.getInfoAboutProject(this.props.onTodoClick)
+    componentDidMount() {
+        if(this.props.products.length === 0){
+            //this.props.history.push('/');
+        }
     }
 
-    onTaskCreate = (text) =>{
-        this.props.onTodoClick({
-            'type': cnst.ADD_TODO,
-            'text':text,
-            'id': this.props.todos.length
+    getProductName = (product_id) => {
+        const product = this.props.products.find(product => {
+            return product.id === product_id
         })
+        return lodash.get(product,'name','Undefined Product');
     }
-
-    onTaskClick = (id) =>{
-        this.props.onTodoClick({
-            'type': cnst.COMPLETE_TODO,
-            'id': id
-        })
-    }
-
     render() {
         return(
             <main>
@@ -34,20 +27,26 @@ class Invoice extends React.Component {
                         <Link to={`/`}>Login</Link>
                     </section>
                 </nav>
-                <section className='HomePageBlock'>
+                <section className='MainBlock'>
                     {
                         this.props.invoicesItems.map((item,key) => {
-                            return (
-                                <div 
-                                key={key}>
-                                    <span>Item id : {item.id}</span><br/>
-                                    <span>Invoice id : {item.invoice_id}</span><br/>
-                                    <span>Product id : {item.product_id}</span><br/>
-                                    <span>Quantity : {item.quantity}</span><br/>
-                                    <hr/>
-                                </div>)
+                            if(this.props.selectedInvoice === item.invoice_id){
+                                return (
+                                    <div 
+                                    key={key}>
+                                        <span>Item id : {item.id}</span><br/>
+                                        <span>Invoice id : {item.invoice_id}</span><br/>
+                                        <span>Product name : {this.getProductName(item.product_id)}</span><br/>
+                                        <span>Quantity : {item.quantity}</span><br/>
+                                        <hr/>
+                                    </div>
+                                )
+                            }
                         })
                     }
+                    <div>
+                        <Link to={`/invoices_list`}>Back</Link>
+                    </div>
                 </section>
             </main>
         )
@@ -56,7 +55,9 @@ class Invoice extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    invoicesItems: state.invoicesItems
+    invoicesItems: state.invoicesItems,
+    products: state.products,
+    selectedInvoice:state.selectedInvoice
   }
 }
 

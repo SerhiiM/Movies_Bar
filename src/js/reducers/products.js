@@ -1,10 +1,10 @@
 import * as cnst from '../Common/constant';
 import lodash from 'lodash';
 
-const changeInvoicesItems = (state = [],action) => {
+const changeProducts = (state = [], action) => {
   switch (action.type) {
-    case cnst.RECEIVE_INVOICES_ITEMS:
-        action.receiveInvoicesItems.forEach(el => {
+    case cnst.RECEIVE_PRUDUCTS:
+        action.products.forEach(el => {
             if(!lodash.some(state,['id', el.id])){
               state.push(el)
             }
@@ -15,13 +15,13 @@ const changeInvoicesItems = (state = [],action) => {
   }
 }
 
-const invoicesItems = (state = [], action) => {
+const products = (state = [], action) => {
   switch (action.type) {
-    case cnst.RECEIVE_INVOICES_ITEMS:
-      return changeInvoicesItems(state,action)
+    case cnst.RECEIVE_PRUDUCTS:
+      return changeProducts(state, action)
     default:
       return state
   }
 }
 
-export default invoicesItems
+export default products

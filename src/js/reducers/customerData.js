@@ -1,19 +1,24 @@
 import * as cnst from '../Common/constant';
+import lodash from 'lodash';
 
-const changeParams = (state = {}, action) => {
+const changeCustomerData = (state = [], action) => {
   switch (action.type) {
     case cnst.RECEIVE_CUSTUMER_DATA:
-      const params =  action.params;
-      return Object.assign(state, params)
+        action.customerData.forEach(el => {
+            if(!lodash.some(state,['id', el.id])){
+              state.push(el)
+            }
+        })
+        return lodash.uniq(state);
     default:
-      return state
+        return state
   }
 }
 
-const customerData = (state = {}, action) => {
+const customerData = (state = [], action) => {
   switch (action.type) {
     case cnst.RECEIVE_CUSTUMER_DATA:
-      return changeParams(state, action)
+      return changeCustomerData(state, action)
     default:
       return state
   }
