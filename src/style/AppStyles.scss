@@ -76,12 +76,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
     color:$AppColor3;
     text-decoration: none;
 }
-.DisplayInfoTaskActive{
-    text-decoration: none;
-    
+.InvoiceItem{
+    padding-top: 30px;
 }
-.DisplayInfoTaskCompleted{
-    text-decoration: line-through;
-    opacity: 0.7;
-    transition: .2s;
+.BtnBlock{
+    margin-top: 30px;
+    margin-right: 12px;
 }

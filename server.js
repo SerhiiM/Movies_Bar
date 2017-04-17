@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var cors = require('cors');
 var compression = require('compression')
+var bodyParser = require('body-parser')
 
 function shouldCompress(req, res) {
     if (req.headers['x-no-compression']) {
@@ -12,6 +13,11 @@ function shouldCompress(req, res) {
 
 app.use(cors());
 app.options('*', cors());
+
+app.use(bodyParser.json() );       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+})); 
 
 app.use(compression({filter: shouldCompress}));
 

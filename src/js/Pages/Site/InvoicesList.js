@@ -4,6 +4,7 @@ import {Link} from 'react-router';
 import { connect } from 'react-redux';
 import * as InvoicesAction from '../../Actions/InvoicesAction';
 import lodash from 'lodash';
+import { Button } from "react-bootstrap";
 
 class InvoicesList extends React.Component {
 
@@ -18,7 +19,14 @@ class InvoicesList extends React.Component {
         this.props.selectInvoice({
             type: cnst.SELECT_INVOICE, 
             selectedInvoice: newInvoiceId
-        })
+        });
+        const params = {
+            id:newInvoiceId,
+            custumer_id:this.props.customerData[0].id,
+            discount:0,
+            total:0
+        }
+        InvoicesAction.createNewInvoice(this.props.receiveData,params);
         this.props.history.push('/invoice');
     }
 
@@ -63,10 +71,9 @@ class InvoicesList extends React.Component {
                         })
                     }
                     <div>
-                        <button
-                        onClick={this.createNewInvoice}>
+                        <Button bsStyle="primary" onClick={this.createNewInvoice}>
                             Create new invoice
-                        </button>
+                        </Button>
                     </div>
                 </section>
             </main>

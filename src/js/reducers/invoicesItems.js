@@ -10,6 +10,9 @@ const changeInvoicesItems = (state = [],action) => {
             }
         })
         return lodash.uniq(state);
+    case cnst.ADD_NEW_INVOICE_ITEM:
+        state.push(action.invoice_item);
+        return lodash.uniq(state);
     default:
         return state
   }
@@ -18,6 +21,8 @@ const changeInvoicesItems = (state = [],action) => {
 const invoicesItems = (state = [], action) => {
   switch (action.type) {
     case cnst.RECEIVE_INVOICES_ITEMS:
+      return changeInvoicesItems(state,action)
+    case cnst.ADD_NEW_INVOICE_ITEM:
       return changeInvoicesItems(state,action)
     default:
       return state

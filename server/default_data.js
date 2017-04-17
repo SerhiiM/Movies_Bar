@@ -7,7 +7,7 @@ export const default_invoices_list = [
             },{
                 id:2,
                 custumer_id:2,
-                discount:5,
+                discount:0,
                 total:200
             }
         ]

@@ -28,3 +28,29 @@ export function getInvoicesItems (dispatch,id) {
         console.error(error);
     });
 }
+
+export function createNewInvoice (dispatch,params) {
+    axios.post(`${SERVER_PATH}/api/invoices`, params)
+    .then(({data})=> {
+        dispatch({
+            type: cnst.ADD_NEW_INVOICES, 
+            receiveInvoices: [data] || [] 
+        })
+    })
+    .catch((error) =>{
+        console.error(error);
+    });
+}
+
+export function updateCustumer(dispatch,params) {
+    axios.put(`${SERVER_PATH}/api/invoices/${params.id}`, params)
+    .then(({data})=> {
+        dispatch({
+            type: cnst.UPDATE_INVOICES_LIST, 
+            invoice_list: data
+        })
+    })
+    .catch((error) =>{
+        console.error(error);
+    });
+}
