@@ -83,3 +83,11 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
     margin-top: 30px;
     margin-right: 12px;
 }
+.InvoicesList{
+    font-size: 20px;
+    cursor: pointer;
+}
+.InvoicesList:hover{
+    text-decoration: underline;
+    transition: 1s;
+}

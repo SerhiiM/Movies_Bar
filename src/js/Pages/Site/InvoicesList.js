@@ -9,12 +9,16 @@ import { Button } from "react-bootstrap";
 class InvoicesList extends React.Component {
 
     componentDidMount() {
-        if(this.props.invoicesList.length===0){
-            //this.props.history.push('/');
-        }
+        setTimeout(this.checkForData,1000);
     }
 
-    createNewInvoice = () => {
+    checkForData = () => {
+        if(this.props.invoicesList.length === 0){
+            this.props.history.push('/');
+        }
+    }
+    
+    createNewInvoiceList = () => {
         const newInvoiceId = lodash.last(this.props.invoicesList).id + 1
         this.props.selectInvoice({
             type: cnst.SELECT_INVOICE, 
@@ -26,7 +30,7 @@ class InvoicesList extends React.Component {
             discount:0,
             total:0
         }
-        InvoicesAction.createNewInvoice(this.props.receiveData,params);
+        InvoicesAction.createNewInvoiceList(this.props.receiveData,params);
         this.props.history.push('/invoice');
     }
 
@@ -51,8 +55,7 @@ class InvoicesList extends React.Component {
             <main>
                 <nav className='NavigationBlock'>
                     <section className='NavigationBlockLinks'>
-                        <Link to={`/invoice`}>Invoice</Link>
-                        <Link to={`/`}>Login</Link>
+                        <Link to={`/`}>Restart</Link>
                     </section>
                 </nav>
                 <section className='MainBlock'>
@@ -60,6 +63,7 @@ class InvoicesList extends React.Component {
                         this.props.invoicesList.map((invoice,key) => {
                             return (
                                 <div 
+                                className='InvoicesList'
                                 onClick={this.onSelectInvoice.bind(this,invoice)}
                                 key={key}>
                                     <span>Invoice id : {invoice.id}</span><br/>
@@ -71,8 +75,8 @@ class InvoicesList extends React.Component {
                         })
                     }
                     <div>
-                        <Button bsStyle="primary" onClick={this.createNewInvoice}>
-                            Create new invoice
+                        <Button bsStyle="primary" onClick={this.createNewInvoiceList}>
+                            Create new invoice list
                         </Button>
                     </div>
                 </section>

@@ -29,7 +29,7 @@ export function getInvoicesItems (dispatch,id) {
     });
 }
 
-export function createNewInvoice (dispatch,params) {
+export function createNewInvoiceList (dispatch,params) {
     axios.post(`${SERVER_PATH}/api/invoices`, params)
     .then(({data})=> {
         dispatch({
@@ -42,12 +42,38 @@ export function createNewInvoice (dispatch,params) {
     });
 }
 
-export function updateCustumer(dispatch,params) {
+export function createNewInvoice (dispatch,params) {
+    axios.post(`${SERVER_PATH}/api/invoices/${params.invoice_id}/items`, params)
+    .then(({data})=> {
+        dispatch({
+            type: cnst.ADD_NEW_INVOICE_ITEM, 
+            invoice_item: data || {}
+        })
+    })
+    .catch((error) =>{
+        console.error(error);
+    });
+}
+
+export function updateInvoicesList(dispatch,params) {
     axios.put(`${SERVER_PATH}/api/invoices/${params.id}`, params)
     .then(({data})=> {
         dispatch({
             type: cnst.UPDATE_INVOICES_LIST, 
             invoice_list: data
+        })
+    })
+    .catch((error) =>{
+        console.error(error);
+    });
+}
+
+export function updateInvoice(dispatch,params) {
+    axios.put(`${SERVER_PATH}/api/invoices/${params.invoice_id}/items/${params.id}`, params)
+    .then(({data})=> {
+        dispatch({
+            type: cnst.UPDATE_INVOICE, 
+            invoice: data || {} 
         })
     })
     .catch((error) =>{

@@ -26,6 +26,14 @@ router.get('/invoices/:id/items', function (req, res) {
     })
     res.json(needed_items);
 });
+
+router.post('/invoices/:id/items', function (req, res) {
+    res.json(req.body);
+});
+
+router.put('/invoices/:id/items/:id', function (req, res) {
+    res.json(req.body);
+});
 /**
  * Customers
  */

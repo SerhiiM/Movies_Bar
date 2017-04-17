@@ -13,6 +13,14 @@ const changeInvoicesItems = (state = [],action) => {
     case cnst.ADD_NEW_INVOICE_ITEM:
         state.push(action.invoice_item);
         return lodash.uniq(state);
+    case cnst.UPDATE_INVOICE:
+        const newList = state.map(el=>{
+            if(el.id === action.invoice.id){
+              return Object.assign(el, action.invoice);
+            }
+            return el
+        })
+        return lodash.uniq(newList);
     default:
         return state
   }
@@ -23,6 +31,8 @@ const invoicesItems = (state = [], action) => {
     case cnst.RECEIVE_INVOICES_ITEMS:
       return changeInvoicesItems(state,action)
     case cnst.ADD_NEW_INVOICE_ITEM:
+      return changeInvoicesItems(state,action)
+    case cnst.UPDATE_INVOICE:
       return changeInvoicesItems(state,action)
     default:
       return state
