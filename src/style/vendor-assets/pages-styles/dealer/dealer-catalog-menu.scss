@@ -1,0 +1,84 @@
+.d-catalog-menu{
+    flex: 1 15%;
+    border-right: 1px solid rgba(153, 153, 153, .6);
+    .Collapsible {
+        border-bottom: 1px solid rgba(153, 153, 153, .6);
+    }
+    .d-cat-checkbox{
+        margin-bottom: 7px;
+    }
+    .d-cat-select{
+        margin: -22px 0;
+    }
+    .select-collapsible .d-cat-select:last-of-type{
+        margin-bottom: 0;
+    }
+    .search-field{
+        margin-top: -20px!important;
+        margin-bottom: 10px!important;
+    }
+    .Collapsible__trigger {
+        position: relative;
+        color: rgb(102, 102, 102);
+        padding: 15px 20px 15px;
+        display: block;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        font-size: 14px;
+        font-family: 'HelveticaRoman', sans-serif;
+        &:before,
+        &:after {
+            position: absolute;
+            width: 8px;
+            height: 2px;
+            background: rgb(102, 102, 102);
+            top: 23px;
+            content: '';
+            right: 20px;
+            transition: .4s ease all;
+            transform: rotate(-45deg);
+        }
+        &:before {
+            right: 25px;
+            transform: rotate(45deg);
+        }
+        &.is-open {
+            &:before {
+                transform: rotate(135deg)
+            }
+            &:after{
+                transform: rotate(-135deg)
+            }
+        }
+    }
+    .Collapsible__contentOuter{
+        padding: 0 20px 0;
+    }
+    .Collapsible__contentInner{
+        padding: 0 0 10px;
+    }
+    .price-lb{
+        display: block;
+        margin: 15px 0 -13px;
+        color: rgb(153, 153, 153);
+    }
+    .price-wrap .inner-wrap{
+        float: left;
+        width: 50%;
+    }
+    .price-fields{
+        width: calc(100% - 60px)!important;
+        float: left;
+        position: relative;
+        &:after{
+            position: absolute;
+            content: 'грн';
+            right: -30px;
+            bottom: 3px;
+        }
+    }
+}
+
+
+

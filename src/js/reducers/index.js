@@ -1,17 +1,13 @@
-import { combineReducers } from 'redux';
-import infoFromServer from './infoFromServer';
-import customerData from './customerData';
-import invoicesList from './invoicesList';
-import invoicesItems from './invoicesItems';
-import products from './products';
-import selectedInvoice from './selectedInvoice';
+import {
+	combineReducers
+} from 'redux';
+import {
+	reducer as notifications
+} from 'react-notification-system-redux';
 
-const reducers = combineReducers({
-  customerData,
-  invoicesList,
-  invoicesItems,
-  products,
-  selectedInvoice
+const Storage = combineReducers({
+	notifications
 })
 
-export default reducers
+
+export default Storage

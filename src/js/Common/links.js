@@ -1,1 +1,1 @@
-export const SERVER_PATH = 'http://localhost:8083'
+export const SERVER_PATH = 'http://core.vianor.maxi-soft.net/api';
