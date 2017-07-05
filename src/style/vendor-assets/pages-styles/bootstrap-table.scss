@@ -1,0 +1,162 @@
+//orders table
+
+.react-bs-table-container{
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.4);
+    *{
+        outline: none;
+    }
+    .react-bs-container-header{
+        height: 39px;
+        th{
+            height: 39px;
+            line-height: 39px;
+            font-family: 'GillRegular', sans-serif;
+            font-size: 13px;
+            color: rgb(230, 74, 25);
+
+        }
+    }
+    .react-bs-container-body{
+        background-color: #fff;
+        border-top: 1px solid rgba(153, 153, 153, 0.6);;
+        td{
+            height: 49px;
+            border-bottom: 1px solid rgba(153, 153, 153, 0.6);;
+        }
+    }
+    .react-bs-table-no-data{
+        padding: 14px 20px;
+    }
+}
+.sort-column{
+    cursor: pointer;
+    .order{
+        &.dropdown{
+            display: inline-block;
+            .caret{
+                display: inline-block;
+                position: relative;
+                margin: 0!important;
+                color: inherit;
+                &:after{
+                    position: relative;
+                    content: "\e5db"!important;
+                    font-size: 14px;
+                    color: #ff6600;
+                    font-family: icomoon!important;
+                }
+            }
+        }
+        &.dropup{
+            display: inline-block;
+            .caret{
+                display: inline-block;
+                position: relative;
+                margin: 0!important;
+                color: inherit;
+                &:after{
+                    color: #ff6600;
+                    margin: auto;
+                    position: relative;
+                    content: "\e5d8"!important;
+                    font-size: 14px;
+                    font-family: icomoon!important;
+                }
+            }
+        }
+    }
+    .dropdown{
+        display: inline-block;
+        .caret{
+            display: inline-block;
+            position: relative;
+            margin: 0!important;
+            color: inherit;
+            &:after{
+                position: relative;
+                content: "\e5db"!important;
+                font-size: 14px;
+                color: #ff6600;
+                font-family: icomoon!important;
+            }
+        }
+    }
+    .dropup{
+        display: inline-block;
+        .caret{
+            display: inline-block;
+            position: relative;
+            margin: 0!important;
+            color: inherit;
+            &:after{
+                color: #ff6600;
+                margin: auto;
+                position: relative;
+                content: "\e5d8"!important;
+                font-size: 14px;
+                font-family: icomoon!important;
+            }
+        }
+    }
+}
+
+.orders-table{
+    .react-bs-container-body{
+        background-color: rgba(255, 102, 0, .15);
+    }
+}
+.checkbox-personalized input[type=checkbox] {
+    display: none;
+}
+.checkbox-personalized label {
+    margin: 0 auto;
+    display: block;
+    padding: 5px 0;
+}
+.checkbox-personalized label {
+    margin: 0 auto;
+    display: block;
+    padding: 5px 0;
+}
+.checkbox-personalized label .check {
+    margin: 3px 22px;
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgb(119, 119, 119);
+    border-radius: 2px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+}
+.checkbox-personalized input[type=checkbox]:checked + label .check {
+    background: #ff6600;
+    transition: all 0.2s ease-in;
+    border: 1px solid #ff6600;
+}
+.checkbox-personalized input[type=checkbox]:indeterminate + label .check {
+    background: rgb(119, 119, 119);
+    transition: all 0.2s ease-in;
+    border: 1px solid rgb(119, 119, 119);
+}
+.checkbox-personalized input[type=checkbox]:indeterminate + label .check:after {
+    content: '';
+    display: block;
+    height: 8px;
+    border: solid #FFF;
+    margin: -3px auto 0;
+    border-width: 0 2px 0 0;
+    transform: rotate(90deg);
+}
+
+.checkbox-personalized input[type=checkbox]:checked + label .check:after {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 9px;
+    border: solid #FFF;
+    margin: 2px auto 0;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}

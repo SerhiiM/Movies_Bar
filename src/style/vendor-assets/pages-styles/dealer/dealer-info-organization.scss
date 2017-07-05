@@ -1,0 +1,41 @@
+.dealer-organization{
+    .card{
+        border-radius: 4px;
+        margin-bottom: 5px;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    }
+    .card-head{
+        position: relative;
+        padding: 16px 24px;
+        border-bottom: 1px solid rgba(153, 153, 153,.4);
+    }
+    .card-head span{
+        font-size: 20px;
+        vertical-align: middle;
+    }
+    .card-body{
+        padding: 16px 24px 50px;
+    }
+
+
+    .info-table{
+        width: 100%;
+        padding-bottom: 30px;
+    }
+    .info-table thead{
+        color: rgb(153, 153, 153);
+        font-size: 14px;
+        height: 30px;
+        line-height: 30px;
+    }
+    .info-table tbody{
+        line-height: 1.2;
+        font-size: 16px;
+        color: rgb(1, 1, 1);
+    }
+}
+.dealer-info-modal{
+    .rowLabel{
+        color: #000!important;
+    }
+}

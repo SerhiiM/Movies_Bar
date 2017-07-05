@@ -1,0 +1,27 @@
+.loading-block{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    margin-top: 20%;
+}
+.loading-spinner{
+    width: 100px !important;
+    height: 100px !important;
+}
+
+input:invalid {
+    box-shadow: none;
+}
+
+input:-moz-submit-invalid {
+    box-shadow: none;
+}
+
+input:-moz-ui-invalid {
+    box-shadow:none;
+}
+
+
+
+
+
