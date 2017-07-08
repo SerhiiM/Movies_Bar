@@ -1,13 +1,10 @@
-import SignInModule from './pages/SignInModule';
-import * as handlers from './pages/RouterHandlers';
-import MoviesList from './pages/MoviesList';
-import MovieDetails from './pages/MovieDetails';
+import SignInModule from './SignInModule';
 
-import Login from './pages/Login';
-import NoPage from './pages/NoPage';
-import Loading from './pages/Loading';
+import * as handlers from './RouterHandlers';
+import MoviesList from './MoviesList';
+import MovieDetails from './MovieDetails';
 
-export const getAppRoutes = (store) => {
+export const getAppRoutes = () => {
     return {
         path: `/`,
         indexRoute: {component: SignInModule},

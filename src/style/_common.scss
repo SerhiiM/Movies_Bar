@@ -1,24 +1,55 @@
-.loading-block{
+body{
+    background-color: whitesmoke;
+    font-family: 'Ubuntu', sans-serif;
+}
+.main_block{
+    display: flex; 
+}
+.movies_list{
     display: flex;
-    flex: 1;
+    flex-wrap: wrap;
+}
+.movie_block{
+    margin: 10px;
+    width: 300px;
+    cursor: pointer;
+}
+.movie_block:hover img{
+    filter:brightness(40%);
+    -webkit-filter: brightness(40%);
+    transition: 1s;
+}
+.btn_active{
+    background-color: $AppColor2;
+    border-color: $AppColor2;
+    color: whitesmoke;
+}
+.status_bar{
+    min-width: 200px;
+}
+.progress_bar{
+    margin-bottom: 5px !important;
+}
+.status_bar_block{
+    padding: 10px;
+    width: 190px;
+    position: fixed;
+}
+.nav{
+    margin: 10px;
+}
+.nav button{
+    margin-right: 10px;
+}
+.pagination_block{
+    display: flex;
     justify-content: center;
-    margin-top: 20%;
 }
-.loading-spinner{
-    width: 100px !important;
-    height: 100px !important;
+.quit{
+    float: right;
 }
-
-input:invalid {
-    box-shadow: none;
-}
-
-input:-moz-submit-invalid {
-    box-shadow: none;
-}
-
-input:-moz-ui-invalid {
-    box-shadow:none;
+.sign_in{
+    margin: auto;
 }
 
 
