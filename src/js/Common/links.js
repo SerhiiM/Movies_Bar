@@ -1,1 +1,0 @@
-export const SERVER_PATH = 'http://core.vianor.maxi-soft.net/api';

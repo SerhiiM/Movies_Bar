@@ -1,10 +1,10 @@
-var debug = process.env.NODE_ENV !== "production";
+const debug = process.env.NODE_ENV !== "production";
 
 console.log('process.env.NODE_ENV',process.env.NODE_ENV)
 console.log('debug',debug)
 
-var webpack = require('webpack');
-var path = require('path');
+const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
     entry: "./js/app.js",
