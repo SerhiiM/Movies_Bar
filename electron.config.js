@@ -3,9 +3,20 @@ const electron = require('electron')
 const debug = process.env.NODE_ENV !== "production";
 const updater = require('electron-simple-updater');
 
+const builder = require("electron-builder")
+const Platform = builder.Platform
+
 if(!debug){
-  updater.init('https://raw.githubusercontent.com/megahertz/electron-simple-updater/master/example/updates.json')
-}
+  builder.build({
+    targets: Platform.WINDOWS.createTarget(),
+  })
+    .then(() => {
+      console.log('success')
+    })
+    .catch((error) => {
+      console.log('error',error)
+    })
+  }
 // Module to control application life.
 const app = electron.app
 // Module to create native browser window.

@@ -1,5 +1,5 @@
 {
-  "name": "vianor_project",
+  "name": "movies_app_project",
   "version": "0.1.0",
   "description": "",
   "main": "main.js",
@@ -68,6 +68,8 @@
     "babel-preset-react": "^6.16.0",
     "css-loader": "^0.23.1",
     "electron": "^1.6.12",
+    "electron-builder": "^19.26.3",
+    "electron-builder-squirrel-windows": "^19.25.0",
     "html-loader": "^0.4.3",
     "node-sass": "^3.4.2",
     "react-hot-loader": "^3.0.0-beta.7",
@@ -81,7 +83,21 @@
     "electron": "cross-env TARGET=desktop NODE_ENV=production electron .",
     "dev": "cross-env TARGET=web webpack-dev-server --content-base --hot --inline --port 3000",
     "build:development": "cross-env TARGET=web NODE_ENV=development webpack --progress --profile --colors",
-    "build:production": "cross-env TARGET=web NODE_ENV=production webpack -p --progress --profile --colors"
+    "build:production": "cross-env TARGET=web NODE_ENV=production webpack -p --progress --profile --colors",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "Movies_Bar",
+    "linux": {
+      "category": "Development"
+    },
+    "win": {
+      "target": "squirrel"
+    },
+    "squirrelWindows": {
+      "iconUrl": "https://raw.githubusercontent.com/megahertz/electron-simple-updater/master/example/build/icon.ico"
+    }
   },
   "browser": {
     "joi": "joi-browser"
