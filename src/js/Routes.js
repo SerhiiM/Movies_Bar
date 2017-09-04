@@ -1,11 +1,9 @@
 import SignInModule from './pages/SignInModule';
-import * as handlers from './pages/RouterHandlers';
 import MoviesList from './pages/MoviesList';
 import MovieDetails from './pages/MovieDetails';
-
-import Login from './pages/Login';
 import NoPage from './pages/NoPage';
-import Loading from './pages/Loading';
+
+import * as handlers from './RouterHandlers';
 
 export const getAppRoutes = (store) => {
     return {
@@ -31,3 +29,35 @@ export const getAppRoutes = (store) => {
         ]
     };
 };
+
+// return {
+//     path: `/`,
+//     indexRoute: {
+//         component: Login
+//     },
+//     onEnter: handlers.onEnterLoginModule,
+//     childRoutes: [{
+//             path: 'loading',
+//             component: Loading,
+//             onEnter: handlers.onEnterLoading
+//         },
+//         {
+//             path: 'admin',
+//             component: AdminAppLayout,
+//             store: store,
+//             onEnter: handlers.onEnterAdmin.bind(this, store),
+//             childRoutes: [{
+//                     path: 'operations',
+//                     indexRoute: {
+//                         components: {
+//                             content: FeedbackTireCenter
+//                         }
+//                     },
+//                     childRoutes: [{
+//                             path: 'feedback',
+//                             caption: "Відгуки про шинні центри",
+//                             indexRoute: {
+//                                 components: {
+//                                     content: FeedbackTireCenter
+//                                 }
+//                             },
