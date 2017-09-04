@@ -82,7 +82,7 @@ class MoviesList extends React.Component {
             type: cnst.ClEAN_PROGRESS_BARS, 
             progress_bar: {} 
         })
-        this.props.router.push(`/movie_details/${movie.id}`);
+        this.props.router.push(`auth/movie_details/${movie.id}`);
     }
     renderMovies = () => {
         const movies = this.props.movies.results || [];

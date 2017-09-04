@@ -15,7 +15,7 @@ class SignInModule extends React.Component {
     }
 
     goToMoviesList = () => {
-        this.props.router.push('/movies_list');
+        this.props.router.push('auth/movies_list');
     }
 
     handleKeySave = () => {

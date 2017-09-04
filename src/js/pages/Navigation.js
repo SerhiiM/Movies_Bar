@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react';
 import { connect } from 'react-redux';
 
-class Footer extends React.Component {
+class Navigation extends React.Component {
   render() {
       return (
         <div/>
@@ -16,8 +16,8 @@ const stateToProps = (state) => {
   }
 }
 
-Footer = connect(
+Navigation = connect(
     stateToProps
-    )(Footer);
+    )(Navigation);
 
-export default Footer;
+export default Navigation;

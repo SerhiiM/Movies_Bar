@@ -6,13 +6,13 @@ import NoPage from './pages/NoPage';
 import Navigation from './pages/Navigation';
 import Footer from './pages/Footer';
 
-class AdminAppLayout extends React.Component {
+class AppLayout extends React.Component {
     render() {
         const {
             content,
             routes
         } = this.props;
-        
+        debugger
         return (
             <section>
                 <Navigation />
